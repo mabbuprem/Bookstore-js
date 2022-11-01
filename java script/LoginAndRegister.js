@@ -6,28 +6,28 @@ window.addEventListener('DOMContentLoaded', function() {
     let regexMobile = RegExp('^[6-9]{1}[0-9]{9,}$')
 
 
-    const enterName = document.getElementById('enterName');
-    const enterEmail = document.getElementById('enterEmail');
-    const loginEmail = document.getElementById('enterEmail2');
-    const loginPassword = document.getElementById('enterPassword2')
-    const loginButton = document.getElementById('loginButton')
-    const enterPassword = document.getElementById('enterPassword');
-    const enterPhoneNumber = document.getElementById('enterPhoneNumber');
-    const incorrectName = document.getElementById('incorrectName');
-    const incorrectEmail = document.getElementById('incorrectEmail');
-    const incorrectPassword = document.getElementById('incorrectPassword');
-    const incorrectPhoneNumber = document.getElementById('incorrectPhoneNumber');
-    const incorrectEmailLogin = document.getElementById('incorrectEmailLogin');
-    const incorrectPassword2 = document.getElementById('incorrectPassword2');
-    const loginHeading = document.getElementById('loginHeading');
-    const signupHeading = document.getElementById('signupHeading');
-    const loginDetails = document.getElementById('loginDetails');
-    const signupDetails = document.getElementById('signupDetails');
+    let enterName = document.getElementById('enterName');
+    let enterEmail = document.getElementById('enterEmail');
+    let loginEmail = document.getElementById('enterEmail2');
+    let loginPassword = document.getElementById('enterPassword2')
+    let loginButton = document.getElementById('loginButton')
+    let enterPassword = document.getElementById('enterPassword');
+    let enterPhoneNumber = document.getElementById('enterPhoneNumber');
+    let incorrectName = document.getElementById('incorrectName');
+    let incorrectEmail = document.getElementById('incorrectEmail');
+    let incorrectPassword = document.getElementById('incorrectPassword');
+    let incorrectPhoneNumber = document.getElementById('incorrectPhoneNumber');
+    let incorrectEmailLogin = document.getElementById('incorrectEmailLogin');
+    let incorrectPassword2 = document.getElementById('incorrectPassword2');
+    let loginHeading = document.getElementById('loginHeading');
+    let signupHeading = document.getElementById('signupHeading');
+    let loginDetails = document.getElementById('loginDetails');
+    let signupDetails = document.getElementById('signupDetails');
 
-    const redIdentifierLogin1 = document.querySelector('redIdentifierLogin')
-    const redIdentifierSignup1 = document.querySelector('redIdentifierSignup')
+    let redIdentifierLogin1 = document.querySelector('redIdentifierLogin')
+    let redIdentifierSignup1 = document.querySelector('redIdentifierSignup')
 
-    const signupButton = document.getElementById('signupButton');
+    let signupButton = document.getElementById('signupButton');
 
     let name;
     let email;
@@ -41,8 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
     let inputValue2 = false;
     let inputValue3 = false;
     let inputValue4 = false;
-    let inputValue5 = false;
-    let inputValue6 = false;
+    
 
 
     enterName.addEventListener('change', function() {
@@ -67,7 +66,7 @@ window.addEventListener('DOMContentLoaded', function() {
     loginHeading.addEventListener('click', function() {
         signupDetails.style.display = 'none';
         loginDetails.style.display = "flex";
-         redIdentifierSignup1.style.visibility = "hidden"
+        //  redIdentifierSignup1.style.visibility = "hidden"
 
     })
 
@@ -75,7 +74,7 @@ window.addEventListener('DOMContentLoaded', function() {
         signupDetails.style.display = 'flex';
         loginDetails.style.display = "none";
 
-         redIdentifierLogin1.style.visibility = "hidden"
+        //  redIdentifierLogin1.style.visibility = "hidden"
 
     })
 
@@ -131,14 +130,17 @@ window.addEventListener('DOMContentLoaded', function() {
 
         if ((inputValue1 = true) && (inputValue2 = true) && (inputValue3 = true) && (inputValue4 = true)) {
             let data = {
-                first_name: name,
-                email: email,
-                password: password,
-                phone_no: mobileNumber,
+                "role": "user",
+                "first_name": name,
+                "last_name": "kumar",
+                "email": email,
+                "password": password,
+                "phone_no": mobileNumber,
+                "confirm_password":password
             }
-            console.log(data)
+            console.log('show register data',data)
 
-            $(document).ready(function () {
+             $(document).ready(function () {
                 $.ajax({
                     url: "http://127.0.0.1:8000/api/register",
                     type: "POST",
@@ -148,7 +150,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         console.log(result);
                     }
                 })
-            })
+             })
         }
 
 
@@ -211,6 +213,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     success: function (result) {
                         console.log(result);
                         localStorage.setItem("token",result.token)
+                        window.location="../html/HomePage.html"
                     }
                     
                 })
@@ -218,11 +221,6 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
     })
-
-
-
-
-
 
 
 })

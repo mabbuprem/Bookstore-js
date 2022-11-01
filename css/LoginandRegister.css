@@ -103,6 +103,7 @@
     text-transform: uppercase;
     opacity: 1;
     font-weight: bold;
+    
 }
 
 .redIdentifier {
@@ -255,6 +256,7 @@
     font-size: 15px;
     color: #FFFFFF;
     opacity: 1;
+    border: none;
 }
 
 .loginDetails {
@@ -331,6 +333,7 @@
     font-size: 15px;
     color: #FFFFFF;
     opacity: 1;
+    border: none;
 }
 
 .or {
@@ -370,6 +373,7 @@
     border-radius: 3px;
     opacity: 1;
     color: #FFFFFF;
+    border: none;
     /* border:1px solid green; */
 }
 
