@@ -112,11 +112,11 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 200vh;
+    height: 20vh;
     width: 100vw;
     top: -10px;
     /* border: 1px solid red; */
-    margin-left: -10px;
+    margin-left: 0px;
 }
 
 *:focus {
@@ -180,7 +180,7 @@
     /* background: #9D9D9D 0% 0% no-repeat padding-box; */
     opacity: 1;
     border: 2px solid blue;
-    margin-left: -10%;
+    margin-left: -100%;
 }
 
 .search-bar-container {
@@ -217,6 +217,8 @@
     color: white;
     /* background: #FFFFFF 0% 0% no-repeat padding-box; */
     opacity: 1;
+    top: 100px;
+    margin-top: 20px;
 }
 
 .carticon {
@@ -245,6 +247,8 @@
     letter-spacing: 0.45px;
     color: #FFFFFF;
     opacity: 1;
+    margin-top: -10px;
+    font-size: 13px;
 }
 
 .cart {
@@ -269,6 +273,8 @@
     color: white;
     /* background: #FFFFFF 0% 0% no-repeat padding-box; */
     opacity: 1;
+    margin-top: 20px;
+   
 }
 
 .cartName {
@@ -281,6 +287,133 @@
     letter-spacing: 0.45px;
     color: #FFFFFF;
     opacity: 1;
+    margin-top: -5px;
+    font-size: 13px;
 }
+
+.bookContainer {
+    display: flex;
+    flex-direction: column;
+    height: 275px;
+    width: 235px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    opacity: 1;
+    margin-top: 26px;
+    overflow: hidden;
+    /* margin-left: 26px; */
+    /* border: 2px solid red; */
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 172px;
+    width: 233px;
+    /* border: 2px solid black; */
+    /* margin-top: 22px; */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 2px 2px 0px 0px;
+    opacity: 1;
+}
+
+.book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 135px;
+    border: 1px solid red;
+
+}
+
+
+.bookName {
+    display: flex;
+    width: 230px;
+    height: 19px;
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    text-align: left;
+    font: normal normal normal 14px/19px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.author {
+    display: flex;
+    height: 13px;
+    width: 130px;
+    margin-left: 20px;
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    height: 16px;
+    width: 130px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.star {
+    background: #388E3C 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    color: white;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    height: 15px;
+    font-size: small;
+}
+
+.starRating {
+    margin-left: 5px;
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    height: 16px;
+    width: 130px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.originalPrice {
+    margin-left: 5px;
+    text-align: left;
+    text-decoration: line-through;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+
+#bookdiv{
+   
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 5vh;
+    margin-left: 200px;
+    
+    
+}
+
+
 
 
