@@ -1,8 +1,22 @@
-
+window.addEventListener('DOMContentLoaded', function () {
 let token = localStorage.getItem('token');
+let bookIcon = document.querySelector('.bookIcon')
 
 
 getallbooks();
+
+bookIcon.addEventListener('click', function () {
+    window.location="../html/DisplayBook.html"
+   })
+
+   $(document).on('click', '.main-container', function (event) {
+    console.log(event.target.id)
+    let idValue = event.currentTarget.id
+    console.log(idValue)
+
+
+
+})
 
 
 //get all books
@@ -38,6 +52,8 @@ function getallbooks() {
             </div>
             </div>
 
+        
+
 
                 
      `)
@@ -48,3 +64,4 @@ function getallbooks() {
 
 
 }
+})
