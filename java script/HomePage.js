@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', function () {
 let token = localStorage.getItem('token');
 let bookIcon = document.querySelector('.bookIcon')
 
-
 getallbooks();
 
 bookIcon.addEventListener('click', function () {
@@ -26,11 +25,11 @@ function getallbooks() {
     $.ajax({
         url: "http://127.0.0.1:8000/api/displayAllBooks",
         type: "GET",
+        
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token,
         },
-
         success: function (result) {
             console.log(result);
             let bookarray = result.books
@@ -59,9 +58,23 @@ function getallbooks() {
      `)
         },
 
+       
+
+
+    })
+    $(document).on('click', '.bookContainer', function(event) {
+        console.log(event.target.id)
+        console.log(event.target.textContent)
+        let a = event.target.id
+        window.location = `http://localhost:5500/html/DisplayBook.html?id=${a}`
+
+
+
+        
 
     })
 
 
 }
+
 })
