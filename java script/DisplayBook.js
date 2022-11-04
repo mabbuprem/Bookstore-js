@@ -1,10 +1,12 @@
-window.addEventListener('DOMContentLoaded', function () {
+ window.addEventListener('DOMContentLoaded', function () {
 
     console.log("Hi")
     let token = localStorage.getItem('token');
     let bookIcon = document.querySelector('.bookIcon')
     let flexContainer = document.querySelector('.displayMainInnerContainer2')
     getallbooks();
+    AddtoBag();
+    Wishlist();
 
     bookIcon.addEventListener('click', function () {
         window.location.href = '../html/HomePage.html'
@@ -33,8 +35,16 @@ window.addEventListener('DOMContentLoaded', function () {
             success: function (result) {
                 console.log(result);
                 let filterArray = result.books
-                flexContainer.innerHTML = filterArray.map((book1) => `
-                    
+                let bookid = localStorage.getItem('bookid')
+                console.log('showbookid',bookid)
+                let fl= filterArray.filter((a)=>{
+                    return a.id == bookid
+
+
+                })
+                console.log(fl)
+                flexContainer.innerHTML = fl.map((book1) => `
+
                 <div class="bookDesc1">
                 <div class="bookName1" id="bookName">${book1.description}</div>
                 <div class="author1" id="author">${book1.author}</div>
@@ -77,6 +87,56 @@ window.addEventListener('DOMContentLoaded', function () {
        
     
     }
+    
+   
 
 
 })
+
+function AddtoBag(id){
+    console.log('show data',id)
+    let data = {
+        book_id: id
+    }
+    // console.log("show data")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/addBookToCartByBookId",
+        type: "POST",
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        success: function (result) {
+            console.log(result);
+
+
+        }
+
+    })
+}
+
+
+function Wishlist(id){
+    console.log('show data',id)
+    let data = {
+        book_id: id
+    }
+    // console.log("show data")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/addBookToWishlistByBookId",
+        type: "POST",
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        success: function (result) {
+            console.log(result);
+
+
+        }
+
+    })
+}
+

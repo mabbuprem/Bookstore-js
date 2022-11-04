@@ -1,4 +1,9 @@
-window.addEventListener('DOMContentLoaded', function () {
+// window.addEventListener('DOMContentLoaded', function () {
+function bookshow(id){
+    localStorage.setItem('bookid',id)
+    console.log('show id',id)
+    window.location = `http://localhost:5500/html/DisplayBook.html?id=`
+}
 let token = localStorage.getItem('token');
 let bookIcon = document.querySelector('.bookIcon')
 
@@ -17,7 +22,6 @@ bookIcon.addEventListener('click', function () {
 
 })
 
-
 //get all books
 function getallbooks() {
     console.log("Display All Books")
@@ -35,7 +39,7 @@ function getallbooks() {
             let bookarray = result.books
             document.getElementById('bookdiv').innerHTML = bookarray.map((book) => `
                 
-            <div class="bookContainer"> 
+            <div onclick="bookshow(${book.id})" class="bookContainer"> 
             <div class="imgContainer" >
             <div class="book"id=${book._id}><img src="../asserts/bookListing.png" class ="img"> </div>
             </div> 
@@ -62,19 +66,19 @@ function getallbooks() {
 
 
     })
-    $(document).on('click', '.bookContainer', function(event) {
-        console.log(event.target.id)
-        console.log(event.target.textContent)
-        let a = event.target.id
-        window.location = `http://localhost:5500/html/DisplayBook.html?id=${a}`
+    // $(document).on('click', '.bookContainer', function(event) {
+    //     console.log(event.target)
+    //     console.log(event.target.textContent)
+    //     let a = event.target.id
+    //     window.location = `http://localhost:5500/html/DisplayBook.html?id=${a}`
 
 
 
         
 
-    })
+    // })
 
 
 }
 
-})
+// })
