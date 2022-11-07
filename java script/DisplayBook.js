@@ -1,12 +1,13 @@
  window.addEventListener('DOMContentLoaded', function () {
 
     console.log("Hi")
-    let token = localStorage.getItem('token');
+    var token = localStorage.getItem('token');
+    console.log(token)
     let bookIcon = document.querySelector('.bookIcon')
     let flexContainer = document.querySelector('.displayMainInnerContainer2')
     getallbooks();
-    AddtoBag();
-    Wishlist();
+    AddtoBag(bookid);
+    Wishlist(bookid);
 
     bookIcon.addEventListener('click', function () {
         window.location.href = '../html/HomePage.html'
@@ -56,7 +57,7 @@
                 </div>
     
                 <div class="price1">
-                    <div class="price11" id=${book1._id}>Rs. ${book1.discountPrice}</div>
+                    <div class="price11" id=${book1._id}>Rs. ${book1.Price}</div>
                     <div class="originalPrice1" id=${book1._id}> ${book1.price}</div>
                 </div>
                 
@@ -93,10 +94,11 @@
 
 })
 
-function AddtoBag(id){
-    console.log('show data',id)
+function AddtoBag(bookid){
+    console.log('show data',bookid)
+    var token = localStorage.getItem('token');
     let data = {
-        book_id: id
+        book_id: bookid
     }
     // console.log("show data")
     $.ajax({
@@ -117,10 +119,11 @@ function AddtoBag(id){
 }
 
 
-function Wishlist(id){
-    console.log('show data',id)
+function Wishlist(bookid){
+    console.log('show data',bookid)
+    var token = localStorage.getItem('token');
     let data = {
-        book_id: id
+        book_id: bookid
     }
     // console.log("show data")
     $.ajax({
