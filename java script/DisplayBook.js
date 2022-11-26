@@ -6,21 +6,23 @@
     let bookIcon = document.querySelector('.bookIcon')
     let flexContainer = document.querySelector('.displayMainInnerContainer2')
     getallbooks();
-    AddtoBag(bookid);
-    Wishlist(bookid);
+    AddtoBag(id);
+    Wishlist();
 
     bookIcon.addEventListener('click', function () {
         window.location.href = '../html/HomePage.html'
     })
 
-    $(document).on('click', '.displayMainInnerContainer', function (event) {
-        console.log(event.target.id)
-        let idValue = event.currentTarget.id
-        console.log(idValue)
+    
+
+    // $(document).on('click', '.displayMainInnerContainer', function (event) {
+    //     console.log(event.target.id)
+    //     let idValue = event.currentTarget.id
+    //     console.log(idValue)
 
 
 
-    })
+    // })
 
     function getallbooks() {
         console.log("Display All Books")
@@ -94,11 +96,11 @@
 
 })
 
-function AddtoBag(bookid){
-    console.log('show data',bookid)
+function AddtoBag(id){
+    console.log('show data')
     var token = localStorage.getItem('token');
     let data = {
-        book_id: bookid
+        book_id: id
     }
     // console.log("show data")
     $.ajax({
@@ -119,11 +121,11 @@ function AddtoBag(bookid){
 }
 
 
-function Wishlist(bookid){
-    console.log('show data',bookid)
+function Wishlist(id){
+    console.log('show data')
     var token = localStorage.getItem('token');
     let data = {
-        book_id: bookid
+        book_id: id
     }
     // console.log("show data")
     $.ajax({

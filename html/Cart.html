@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../css/cartheader.css">
+    <link rel="stylesheet" href="../css/Cart.css">
+    <script src="../java script/Cart.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div id=header-content class="header-sec">
+
+        </div>
+
+        <div class="header">
+            <div class="bookIcon" id="bookIcon">
+                <img src="../asserts/education.svg" />
+            </div>
+            <div class="BOOKSTORE" id="BOOKSTORE">Bookstore</div>
+
+            <div class="searchBar">
+                <div class="searchIcon">
+                    <i class="material-icons" id="srhIcon">search</i>
+                </div>
+                <div class="searchInput">
+                    <input type="text" class="searchInput1" id="searchInput1" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="user">
+                <div class="userIcon">
+                    <i class="material-icons" id="usrIcon">perm_identity</i>
+
+                </div>
+                <div class="userName">Profile</div>
+            </div>
+
+            <div class="cart">
+                <div class="cartIcon">
+                    <i class="material-icons" id="usrIcon">shopping_cart</i>
+
+                </div>
+                <div class="cartName">Cart</div>
+            </div>
+
+
+        </div>
+        <div class="body-container">
+            <div class="main-section">
+                <div class="main-section-container" id="item-container">
+
+                    <!-- ------------cart item section------------ -->
+
+                    <div class="place-order-section" id="place-order-page">
+                        <div class="section1">
+                            <div class="subsection1">
+                                <span class="cart-title">My cart (1)
+                                </span>
+                                <span id="place-order-section-cart-count"></span>
+                            </div>
+                            <div class="subsection2">
+                                <div class="title-section" id="place-order-section"></div>
+                            </div>
+                            <div class="button-container">
+                                <button class="button-section" id="placeorderbutton" onclick="placeorder()">PLACE
+                                    ORDER</button>
+                            </div>
+                        </div>
+                        <div class="section2" id="cart_page-section2">
+                            <h2>Customer Details</h2>
+                        </div>
+                    </div>
+
+                    <!-- ----------customer details section------------- -->
+
+                    <div class="customer-details" id="customer-details-page">
+                        <div class="customer-details-section2">
+                            <h1>Customer Details</h1>
+                            <div class=input-section-container>
+
+                                <div class="floating-label-name">
+                                    <input class="floating-input" id="first-name" type="" placeholder=" "
+                                        autocomplete="off">
+                                    <label>Name</label>
+                                    <div class="name-error" id="name-error"></div>
+                                </div>
+
+                                <div class="floating-label-name">
+                                    <input class="floating-input" id="phone-number" type="" placeholder=" "
+                                        autocomplete="off">
+                                    <label>Phone Number</label>
+                                    <li style="list-style-type:none">
+                                        <div class="phone-error" value="text" for="name" id="phone-error"></div>
+                                    </li>
+                                </div>
+
+
+                                <div class="floating-label-address">
+                                    <input class="floating-input" id="address" type="address" placeholder=" "
+                                        autocomplete="off">
+                                    <label>Address</label>
+                                    <div class="address-error" value="text" for="name" id="address-error"></div>
+                                </div>
+
+                                <div class="floating-label" type="landmark">
+                                    <input class="floating-input" id="city" type="" placeholder=" " autocomplete="off">
+                                    <label>city/town</label>
+                                    <div class="state-error" value="text" for="name" id="state-error"></div>
+                                </div>
+
+                                <div class="floating-label" type="landmark">
+                                    <input class="floating-input" id="state" type="" placeholder=" " autocomplete="off">
+                                    <label>State</label>
+                                    <div class="landmark-error" value="text" for="name" id="landmark-error"></div>
+                                </div>
+
+                            </div>
+                            <div class="type">
+                                <h>Type</h>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1"></label>
+                                    <h>Home</h>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                        value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2"></label>
+                                    <h>Work</h>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="option3">
+                                    <label class="form-check-label" for="inlineCheckbox3"></label>
+                                    <h>Other</h>
+                                </div>
+                            </div>
+                            <div class="continue-button">
+                                <button class="continue-section" id="continuebutton"
+                                    onclick="addCustomerDetails()">CONTINUE</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- -------------order  section------------- -->
+
+                    <div class="order-summery" id="order-summery-page">
+                        <div class="order-summery-section3">
+                            <h1>Order summery</h1>
+                            <div class="subsection2">
+                                <div class="title-section" id="order-summery-section"></div>
+                            </div>
+                            <div class="button-container">
+                                <button class="button-section">CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section3" id="cart_page-section3">
+                        <h3>Order summery</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- -----------------footer section----------------- -->
+
+        <div class="bottom-section">
+            <h1>copyright @ 2020,Bookstore Private Limited. All Rights Reserved</h1>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
